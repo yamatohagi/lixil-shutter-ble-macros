@@ -1,8 +1,17 @@
-<macro name="lixil-shutter-stop" icon="PLAY">
+<macro name="lixil-shutter-stop" icon="STOP">
   <assert-service description="LIXIL shutter service" uuid="2141e110-213a-11e6-b67b-9e71128cae77">
-    <assert-characteristic description="LIXIL shutter command" uuid="2141e111-213a-11e6-b67b-9e71128cae77">
-      <property name="WRITE" requirement="MANDATORY"/>
+    <assert-characteristic description="LIXIL shutter write command" uuid="2141e112-213a-11e6-b67b-9e71128cae77">
+      <property name="WRITE_WITHOUT_RESPONSE" requirement="MANDATORY"/>
+    </assert-characteristic>
+    <assert-characteristic description="LIXIL shutter notification" uuid="2141e111-213a-11e6-b67b-9e71128cae77">
+      <property name="NOTIFY" requirement="MANDATORY"/>
     </assert-characteristic>
   </assert-service>
-  <write description="Stop shutter" service-uuid="2141e110-213a-11e6-b67b-9e71128cae77" characteristic-uuid="2141e111-213a-11e6-b67b-9e71128cae77" value="0205" type="WRITE_REQUEST"/>
+  <write description="Stop shutter" service-uuid="2141e110-213a-11e6-b67b-9e71128cae77" characteristic-uuid="2141e112-213a-11e6-b67b-9e71128cae77" value="0205" type="WRITE_COMMAND"/>
+  <wait-for-notification description="Wait for stop acknowledgement" service-uuid="2141e110-213a-11e6-b67b-9e71128cae77" characteristic-uuid="2141e111-213a-11e6-b67b-9e71128cae77">
+    <assert-value description="Assert stopping value" value="0900900020"/>
+  </wait-for-notification>
+  <wait-for-notification description="Wait for idle acknowledgement" service-uuid="2141e110-213a-11e6-b67b-9e71128cae77" characteristic-uuid="2141e111-213a-11e6-b67b-9e71128cae77">
+    <assert-value description="Assert acknowledgement value" value="0000900020"/>
+  </wait-for-notification>
 </macro>
