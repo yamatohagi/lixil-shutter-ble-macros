@@ -20,3 +20,17 @@ If the primary macros fail because the characteristic only accepts write-without
 - Stop: `lixil-shutter-stop-command.xml` writes `0205` using `WRITE_COMMAND`
 
 Before testing, disconnect My Window and other phones from the shutter.
+
+## GitHub URLs for Nature Remo
+
+Primary `WRITE_REQUEST` URLs:
+
+- Open: https://github.com/yamatohagi/lixil-shutter-ble-macros/blob/main/lixil-shutter-open.xml
+- Close: https://github.com/yamatohagi/lixil-shutter-ble-macros/blob/main/lixil-shutter-close.xml
+- Stop: https://github.com/yamatohagi/lixil-shutter-ble-macros/blob/main/lixil-shutter-stop.xml
+
+Fallback `WRITE_COMMAND` URLs:
+
+- Open: https://github.com/yamatohagi/lixil-shutter-ble-macros/blob/main/lixil-shutter-open-command.xml
+- Close: https://github.com/yamatohagi/lixil-shutter-ble-macros/blob/main/lixil-shutter-close-command.xml
+- Stop: https://github.com/yamatohagi/lixil-shutter-ble-macros/blob/main/lixil-shutter-stop-command.xml
