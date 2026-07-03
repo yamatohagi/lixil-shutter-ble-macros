@@ -1,0 +1,8 @@
+<macro name="lixil-shutter-close" icon="PLAY">
+  <assert-service description="LIXIL shutter service" uuid="2141e110-213a-11e6-b67b-9e71128cae77">
+    <assert-characteristic description="LIXIL shutter command" uuid="2141e111-213a-11e6-b67b-9e71128cae77">
+      <property name="WRITE" requirement="MANDATORY"/>
+    </assert-characteristic>
+  </assert-service>
+  <write description="Close shutter" service-uuid="2141e110-213a-11e6-b67b-9e71128cae77" characteristic-uuid="2141e111-213a-11e6-b67b-9e71128cae77" value="0204" type="WRITE_REQUEST"/>
+</macro>
